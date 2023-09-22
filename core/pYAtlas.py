@@ -2,25 +2,39 @@ from core import reports
 
 class Test:
 
+  reports = reports.Report()
+
   def __init__(self,testname,callback):
     self.testname = testname
     self.callback = callback
     
     if self.callback == True:
-      reports.setTest(self.testname,'success')
+      self.reports.addtest(self.testname,'success')
     else:   
-      reports.setTest(self.testname,'error')
+      self.reports.addtest(self.testname,'error')
 
-    reports.drawTests()
+    self.reports.drawTests()
+
+
+
+
 
 class Expect:
+
+  reports = reports.Report()
+
   def __init__(self,current):
     self.current = current
 
   def toBe(self,expected):
-    
     if self.current != expected:
-      reports.setErrorDescription(f'Expected: {expected} - Recived: {self.current}')
+      self.reports.setErrorDescription(f'Expected: {expected} - Recived: {self.current}')
       return False
     else:
       return True
+    
+  def toEqual(self,expected):
+    if type(self.current) != type(expected):
+      self.reports.setErrorDescription(f'Type Error\nExpected: {type(expected)} - Recived: {type(self.current)} ')
+
+ 

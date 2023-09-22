@@ -1,52 +1,49 @@
 import os
 
-successTests = []
+class Report:
+  passedTests = []
 
-errorTests = []
-errorDescription = []
+  failedTests = []
+  errorDescription = []
 
 
-def setTest(testName,where):
+  def __init__(self):
+    pass
 
-  if(not testName):
-    print("Put a name on test")
-  if(not where):
-    print("Put a where on test will to be")
-  else:  
-    if(where == 'success'):
-      successTests.append(testName)
+
+  def addtest(self,testName,type):
+    if(not testName):
+      print("Put a name on test")
+    if(not type):
+      print("Put a type of a test")
+    else:  
+      if(type == 'success'):
+        self.passedTests.append(testName)
+      else:
+        self.failedTests.append(testName)
+
+
+  def setErrorDescription(self,description):
+    if(not description):
+      print("Put a description")
     else:
-      errorTests.append(testName)
+      self.errorDescription.append(description) 
+
+  def drawTests(self):
+
+    os.system('CLS')
+    print('>----------------<')
+
+    print(f"✔ PASSED TESTS | {len(self.passedTests)}\n")
+    for test in self.passedTests:
+      print(test)
+
+
+    print('\n>----------------<\n')
+
+    print(f"❌ TESTS FAILED | {len(self.failedTests)}\n")
+
+    for i in range(0,len(self.failedTests)):
+      print(f"{self.failedTests[i]} | {self.errorDescription[i]}")
       
-
-def setErrorDescription(description):
-  if(not description):
-    print("Put a description")
-  else:
-    errorDescription.append(description)  
-
-
-
-
-
-def drawTests():
-
-  # os.system('CLS')
-  print('>----------------<')
-
-  print(f"✔ PASSED TESTS | {len(successTests)}\n")
-  for test in successTests:
-    print(test)
-
-
-  print('\n>----------------<\n')
-
-  print(f"❌ TESTS FAILED | {len(errorTests)}\n")
-
-  for i in range(0,len(errorTests) - 1):
-    print("kkkkkkkkkkkkkk")
-    print(f"{errorTests[0]} | {errorDescription[0]}")
-  
-
-  print('\n>----------------<')
- 
+    print('\n>----------------<') 
