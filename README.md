@@ -1,25 +1,25 @@
 
 # pYAtlas
 
-    My simple lib for automated tests, but its a joke
+My simple lib for automated tests, but its a joke
 
 
 # Syntax
 
-    After download just put on your project folder
+After download just put on your project folder
 
 ## Import pYAtlas to your project
 
-    from core import pYAtlas
+from core import pYAtlas
 
 
 ## Methods
 
-    pYAtlas.Test('Put a test name here','put a callback function here')
+pYAtlas.Test('Put a test name here','put a callback function here')
 
 ### Callback functions 
     
-    pYAtlas.Expect('put the expected value here').toBe('put the value who you expect to recive')
+pYAtlas.Expect('put the expected value here').toBe('put the value who you expect to recive')
 
 
 ## Examples
