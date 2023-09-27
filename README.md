@@ -10,7 +10,7 @@ After download just put on your project folder
 
 ## Import pYAtlas to your project
 
-from core import pYAtlas
+    from pYAtlas import pYAtlas
 
 
 ## Methods

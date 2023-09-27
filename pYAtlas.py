@@ -1,4 +1,4 @@
-from core import reports
+from pYAtlas.core import reports
 
 class Test:
 
