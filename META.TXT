@@ -1,1 +1,2 @@
-FINISHED
+Group of tests
+Custom Message before init

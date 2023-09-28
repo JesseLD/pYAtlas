@@ -1,4 +1,11 @@
-from pYAtlas.core import reports
+import sys
+import os
+
+current_directory = os.path.dirname(os.path.abspath(__file__))
+core_directory = os.path.join(current_directory)
+sys.path.append(core_directory)
+
+from core import reports
 
 class Test:
 
